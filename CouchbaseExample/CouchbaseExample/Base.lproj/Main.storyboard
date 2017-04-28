@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CouchbaseExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CXE-t4-D3g">
+                                <rect key="frame" x="16" y="28" width="264" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3e-vS-Edk">
+                                <rect key="frame" x="315" y="28" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="add" destination="4vB-il-bXQ" eventType="touchUpInside" id="mV5-2K-atw"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0rS-mi-lAe">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q3e-vS-Edk" secondAttribute="trailing" constant="14" id="0mf-EZ-eaL"/>
+                            <constraint firstItem="0rS-mi-lAe" firstAttribute="top" secondItem="CXE-t4-D3g" secondAttribute="bottom" constant="22" id="2Ch-i0-xaO"/>
+                            <constraint firstItem="0rS-mi-lAe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4dP-gg-ykX"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CXE-t4-D3g" secondAttribute="leading" id="LG7-4n-Daz"/>
+                            <constraint firstItem="CXE-t4-D3g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="QfQ-aW-O5j"/>
+                            <constraint firstItem="Q3e-vS-Edk" firstAttribute="leading" secondItem="CXE-t4-D3g" secondAttribute="trailing" constant="35" id="Ybj-cP-hFK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0rS-mi-lAe" secondAttribute="bottom" id="i1P-i4-TDT"/>
+                            <constraint firstItem="0rS-mi-lAe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="it0-sw-Sz7"/>
+                            <constraint firstItem="Q3e-vS-Edk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="sST-Fx-NLB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="LWb-aU-0MV" customClass="CouchbaseTableviewHelper" customModule="CouchbaseExample" customModuleProvider="target">
+                    <connections>
+                        <outlet property="tableView" destination="0rS-mi-lAe" id="gDk-xJ-y50"/>
+                    </connections>
+                </customObject>
+                <customObject id="4vB-il-bXQ" customClass="DocumentAdderUIHelper" customModule="CouchbaseExample" customModuleProvider="target">
+                    <connections>
+                        <outlet property="textField" destination="CXE-t4-D3g" id="RI8-7S-62d"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
